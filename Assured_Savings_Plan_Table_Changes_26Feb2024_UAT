@@ -1,0 +1,7 @@
+alter table t_li_proposer_details add column prod_suitable_test varchar(1) comment 'Customer choose PSM or not';
+
+alter table t_li_lifeassured_details add column lifeassured_mobile varchar(15) comment 'Capture Life Assured Details', 
+add column lifeassured_email varchar(50) comment 'Capture Life Assured Details' ,
+add column is_Customer_as_proposer varchar(1) comment 'Capture Life Assured Details' ;
+
+alter table t_li_medical_details add column chest_paindetails2 varchar(255) comment 'Capture Life Assured Details';
