@@ -1,0 +1,1 @@
+ALTER TABLE t_hi_ghd_details CHANGE COLUMN ghddiscount ghddiscount DOUBLE NULL DEFAULT NULL ;
