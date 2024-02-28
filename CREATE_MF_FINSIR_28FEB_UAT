@@ -1,0 +1,31 @@
+create table t_mf_finsire_user (
+mf_finsire_user_id   BIGINT Primary Key Auto Increment NOT NULL,
+customer_id bigint,
+partner_finsire_id VARCHAR(45),
+isKYCCompliant bit(1),
+user_pan VARCHAR(15) ,
+user_name VARCHAR(255),
+user_mobile VARCHAR(15),
+user_asset VARCHAR(50),
+active bit(1) DEFAULT NULL,
+created_by varchar(45) DEFAULT NULL COMMENT 'Audit Columns used for traceability',
+created_date datetime DEFAULT NULL COMMENT 'Audit Columns used for traceability',
+modified_by varchar(45) DEFAULT NULL COMMENT 'Audit Columns used for traceability',
+modified_date datetime DEFAULT NULL COMMENT 'Audit Columns used for traceability',
+CONSTRAINT fk_customer_id FOREIGN KEY (customerid) REFERENCES t_customer (id));
+
+create table t_mf_finsire_asset_fetch (
+mf_finsire_asset_fetch_id   BIGINT Primary Key Auto Increment NOT NULL,
+partner_finsire_id VARCHAR(45),
+customer_id bigint,
+mf_data_fetched_at DATETIME(6),
+mf_data_fetched_by bigint,
+active bit(1) DEFAULT NULL,
+investment_amount	double,
+current_market_value	double,
+created_by varchar(45) DEFAULT NULL COMMENT 'Audit Columns used for traceability',
+created_date datetime DEFAULT NULL COMMENT 'Audit Columns used for traceability',
+modified_by varchar(45) DEFAULT NULL COMMENT 'Audit Columns used for traceability',
+modified_date datetime DEFAULT NULL COMMENT 'Audit Columns used for traceability',
+CONSTRAINT fk_mfcustomer_id FOREIGN KEY (customerid) REFERENCES t_customer (id),
+CONSTRAINT fk_mf_data_fetched_by FOREIGN KEY (mf_data_fetched_by) REFERENCES t_lob_master (id));
