@@ -1,0 +1,4 @@
+insert into t_hi_consolidated_master 
+(id,min_age,max_age,sum_insured,deductible,premium_amount,premium_percent,addon_name,lob_id)
+values
+(171,0,0,NULL,NULL,NULL,10,'Preferred Provider Network',4);
