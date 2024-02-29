@@ -1,0 +1,33 @@
+create table t_batch_status
+(
+
+batch_status_id  	bigint	primary key  Auto_increment	,
+batch_name 	varchar(100) COMMENT 'Name of the scheduler',
+batch_type	 varchar(40) COMMENT 'Scheduler Type, hourly or weekly',
+batch_start_time 	datetime	COMMENT	'Scheduler Start time',
+batch_end_time 	datetime	COMMENT	'Scheduler End Time',
+no_of_records_processed 	bigint	COMMENT	'Numner of records to be processed in the scheduler',
+no_of_records_success 	bigint	COMMENT	'Number of successfully processed records',
+no_of_records_failed  	bigint	COMMENT	'Number of failed records',
+batch_status	 varchar(20)	COMMENT	'Scheduler current status',
+created_on 	datetime	COMMENT	'Created date',
+created_by 	varchar(50)	COMMENT	'Created  By',
+modified_on 	datetime	COMMENT	'Last Madified date',
+modified_by 	varchar(50)	COMMENT	'Last Modified by'
+);
+
+create table t_batch_error_details
+(
+batch_error_detail_id	bigint	primary key  Auto_increment	,	
+batch_status_id 	bigint,
+exception_message  varchar(500)	COMMENT	'Exception Message',
+tracking_id bigint COMMENT 'Customer id',
+consent_id varchar(100)	COMMENT 'Reference Id from pirimid',
+error_journey varchar(50)	COMMENT	'Journey where exception happened',
+created_on datetime	COMMENT	'Created date',
+created_by varchar(50)	COMMENT	'Created  By',
+modified_on datetime	COMMENT	'Last Madified date',
+modified_by varchar(50)	COMMENT	'Last Modified by',
+CONSTRAINT fk_batch_status_id FOREIGN KEY (batch_status_id) REFERENCES t_batch_status (batch_status_id),
+CONSTRAINT fk_tracking_id FOREIGN KEY (tracking_id) REFERENCES t_customer (id)
+);
