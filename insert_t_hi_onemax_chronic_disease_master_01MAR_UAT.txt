@@ -1,0 +1,7 @@
+INSERT INTO t_hi_onemax_chronic_disease_master (disease_name, lob_id, active) VALUES ('Asthma',4,_binary '');
+INSERT INTO t_hi_onemax_chronic_disease_master (disease_name, lob_id, active) VALUES ('Hypertension (High Blood Pressure)',4,_binary '');
+INSERT INTO t_hi_onemax_chronic_disease_master (disease_name, lob_id, active) VALUES ('Hyperlipidemia (High Cholesterol or High Triglycerides)',4,_binary '');
+INSERT INTO t_hi_onemax_chronic_disease_master (disease_name, lob_id, active) VALUES ('Diabetes Type',4,_binary '');
+INSERT INTO t_hi_onemax_chronic_disease_master (disease_name, lob_id, active) VALUES ('Coronary Artery  Disease (with PTCA done prior to 1 year)',4,_binary '');
+INSERT INTO t_hi_onemax_chronic_disease_master (disease_name, lob_id, active) VALUES ('Chronic Obstructive Pulmonary Disease (COPD)',4,_binary '');
+INSERT INTO t_hi_onemax_chronic_disease_master (disease_name, lob_id, active) VALUES ('High Body Mass Index (Obesity)',4,_binary '');
