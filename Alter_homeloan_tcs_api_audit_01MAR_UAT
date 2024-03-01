@@ -1,0 +1,3 @@
+ALTER TABLE t_homeloan_tcs_api_audit 
+ADD COLUMN credit_score INT NULL DEFAULT NULL AFTER tcs_application_form_no, 
+ADD COLUMN eligible_for_loan BIT(1) NULL DEFAULT NULL AFTER credit_score;
