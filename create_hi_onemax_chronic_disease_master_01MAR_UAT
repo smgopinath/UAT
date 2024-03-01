@@ -1,0 +1,8 @@
+drop table t_hi_onemax_chronic_disease_master;
+CREATE TABLE `t_hi_onemax_chronic_disease_master` (
+  `id` int NOT NULL AUTO_INCREMENT COMMENT 'Primary key auto increment',
+  `disease_name` varchar(100) DEFAULT NULL COMMENT 'Name of the disease',
+  `lob_id` bigint DEFAULT NULL COMMENT 'ID of the Journey',
+  `active` bit(1) DEFAULT b'1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT=' Need to create one new API for fetching the list of disease for sprint 5 Activ One Max Plan addon.';
