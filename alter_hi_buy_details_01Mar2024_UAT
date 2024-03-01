@@ -1,0 +1,2 @@
+alter table t_hi_buy_details add ( payment_order_status varchar(45) DEFAULT NULL, gateway_id tinyint DEFAULT NULL );
+alter table t_hi_buy_details rename application_number to transaction_number;
