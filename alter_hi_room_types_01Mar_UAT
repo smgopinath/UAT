@@ -1,0 +1,1 @@
+alter table t_hi_room_types modify column discount_code varchar(45);
