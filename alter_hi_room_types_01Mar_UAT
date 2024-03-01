@@ -1,1 +1,5 @@
 alter table t_hi_room_types modify column discount_code varchar(45);
+insert into t_hi_room_types
+(discount_name,room_range,room_value,discount_code)
+values
+('ROOM_RENT_TYPE',100,0,'Actuals up to Base Sum Insured');
