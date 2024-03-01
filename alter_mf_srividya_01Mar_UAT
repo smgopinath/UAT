@@ -1,0 +1,2 @@
+alter table t_mf_sip_mandate_details add mandate_valid_to datetime COMMENT 'Mandate Validity (Default value valid_from date + 30 years)';
+alter table t_mf_switches add plan varchar(45) COMMENT 'The id of the plan with which this switch is associated.';
