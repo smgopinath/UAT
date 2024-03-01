@@ -1,0 +1,2 @@
+alter table t_batch_error_details  drop constraint fk_batch_status_id;
+alter table t_batch_error_details  drop column batch_status_id;
