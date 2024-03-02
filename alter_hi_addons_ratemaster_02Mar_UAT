@@ -1,0 +1,3 @@
+alter table t_hi_addons_ratemaster drop column aone_max_chronic_flag;
+update t_hi_addons_ratemaster set aone_max_flag = 'Y' where addons_id = 31;
+update t_hi_addons_ratemaster set aone_max_flag = 'Y' where addons_id = 32;
