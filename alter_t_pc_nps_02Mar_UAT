@@ -1,0 +1,6 @@
+alter table  t_pc_nps_summary add ( refresh_date datetime(6), next_refresh_date datetime(6), linkedAccRef varchar(50));
+alter table t_pc_nps_holdings add ( tier_type varchar(10));
+
+ALTER TABLE t_pc_nps_holdings
+ADD INDEX fk_tracking_id_idx2 (tracking_id ASC, consent_id` ASC) VISIBLE;
+ALTER TABLE t_pc_nps_holdings ALTER INDEX fk_tracking_id_idx INVISIBLE;
