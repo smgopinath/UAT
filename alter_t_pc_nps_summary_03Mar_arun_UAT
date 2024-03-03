@@ -1,0 +1,1 @@
+alter table t_pc_nps_summary add (acct_holder_name varchar(50));
