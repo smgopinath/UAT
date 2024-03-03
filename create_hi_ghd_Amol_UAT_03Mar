@@ -26,4 +26,4 @@ CREATE TABLE t_hi_ghd_details (
   PRIMARY KEY (ghddetails_id),
   KEY fk_proposer_insurance_id_idx (proposer_insured_id),
   CONSTRAINT fk_prop_ind_id FOREIGN KEY (proposer_insured_id) REFERENCES t_hi_proposer_insured_members (proposerinsurerid)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Trans,HI Good Health Details from careplix';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Trans,HI Good Health Details from careplix';
