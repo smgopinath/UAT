@@ -1,1 +1,1 @@
-alter table t_pc_nps_summary add (acct_holder_name varchar(50));
+alter table t_pc_nps_summary add (acct_holder_name varchar(50) comment 'Account Holder Name');
