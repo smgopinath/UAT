@@ -1,0 +1,39 @@
+create table t_hi_activeone_mtype_code
+(
+activone_id	int	Primary Key auto_increment COMMENT 'Primary key id and Auto Increment'
+member_type_code	varchar(10)	NOT NULL  COMMENT 'Each member selection we have one member type code'
+member_type	varchar(100)	NOT NULL COMMENT 'Family Member selection'
+product_code	int	NOT NULL COMMENT 'product code for active one max plan'
+active	bit(1)	COMMENT 'Flag'
+)AUTO_INCREMENT=1;
+
+--
+-- Dumping data for table `t_hi_activeone_mtype_code`
+--
+
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('AH01','Individual',7200,_binary '');
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('AH02','Self + Spouse',7200,_binary '');
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('AH03','Self + Kid1',7200,_binary '');
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('AH06','Self + Kid1 + Kid2',7200,_binary '');
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('AH10','Self + Kid1 + Kid2 + Kid3',7200,_binary '');
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('AH14','Self + Spouse + Kid1',7200,_binary '');
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('AH19','Self + Spouse + Kid1 + Kid2',7200,_binary '');
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('AH34','Self + Spouse + Kid1 + Kid2 + Kid3',7200,_binary '');
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('SH02','Father + Mother',7200,_binary '');
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('GH02','Father in Law + Mother in Law',7200,_binary '');
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('AH129','Self + Kid1 + Kid2 + Kid3 + Kid4',7200,_binary '');
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('AH132','Self + Liv In',7200,_binary '');
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('AH133','Self + Liv In + Kid1',7200,_binary '');
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('AH134','Self + Liv In + Kid1 + Kid2',7200,_binary '');
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('AH135','Self + Liv In + Kid1 + Kid2 + Kid3',7200,_binary '');
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('AH136','Self + Liv In + Kid1 + Kid2 + Kid3 + Kid4',7200,_binary '');
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('AH140','Self + Spouse + Kid1 + Kid2 + Kid3 + Kid4',7200,_binary '');
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('M147','Spouse + Kid1',7200,_binary '');
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('M163','Spouse + Kid1 + Kid2',7200,_binary '');
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('M179','Spouse + Kid1 + Kid2 + Kid3',7200,_binary '');
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('AH141','Spouse + Kid1 + Kid2 + Kid3 + Kid4',7200,_binary '');
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('AH146','Liv In + Kid1',7200,_binary '');
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('AH147','Liv In + Kid1 + Kid2',7200,_binary '');
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('AH148','Liv In + Kid1 + Kid2 + Kid3',7200,_binary '');
+INSERT INTO t_hi_activeone_mtype_code (member_type_code, member_type, product_code, active) VALUES ('AH149','Liv In + Kid1 + Kid2 + Kid3 + Kid4',7200,_binary '');
+-- Dump completed
