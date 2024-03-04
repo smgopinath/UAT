@@ -1,0 +1,1 @@
+ALTER TABLE ABCDDEVDB.t_customer_login_details DROP INDEX ix_logouttime , ADD INDEX ix_logouttime (mdn ASC, logout_time ASC) VISIBLE;
