@@ -5,7 +5,7 @@ member_type_code	varchar(10)	NOT NULL  COMMENT 'Each member selection we have on
 member_type	varchar(100)	NOT NULL COMMENT 'Family Member selection'
 product_code	int	NOT NULL COMMENT 'product code for active one max plan'
 active	bit(1)	COMMENT 'Flag'
-)AUTO_INCREMENT=1;
+) AUTO_INCREMENT = 1;
 
 --
 -- Dumping data for table `t_hi_activeone_mtype_code`
