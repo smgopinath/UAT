@@ -1,0 +1,9 @@
+alter table t_hi_onemax_chronic_disease_master add column display_name varchar(45) COMMENT 'for showing the disease on UI side';
+
+update t_hi_onemax_chronic_disease_master set display_name = 'Asthma' where id = 1;
+update t_hi_onemax_chronic_disease_master set display_name = 'Hypertension' where id = 2;
+update t_hi_onemax_chronic_disease_master set display_name = 'Hyperlipidemia' where id = 3;
+update t_hi_onemax_chronic_disease_master set display_name = 'Diabetes Type' where id = 4;
+update t_hi_onemax_chronic_disease_master set display_name = 'Coronary Artery' where id = 5;
+update t_hi_onemax_chronic_disease_master set display_name = 'COPD' where id = 6;
+update t_hi_onemax_chronic_disease_master set display_name = 'Obesity' where id = 7;
