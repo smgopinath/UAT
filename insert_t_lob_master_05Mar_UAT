@@ -1,0 +1,1 @@
+INSERT INTO `t_lob_master` (`lob`, `desc`, `active`) VALUES ('Credit Card', 'Credit Card', true);
