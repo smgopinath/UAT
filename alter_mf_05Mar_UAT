@@ -1,0 +1,5 @@
+alter table t_mf_sip_mandate_details add column customer_id bigint comment 'Foreign key from t_customer';
+ALTER TABLE t_mf_sip_mandate_details ADD CONSTRAINT fk_custid_mfsif FOREIGN KEY (customer_id) REFERENCES t_customer(id);
+
+alter table t_mf_purchase_payment_details add column customer_id bigint comment 'Foreign key from t_customer';
+ALTER TABLE t_mf_purchase_payment_details ADD CONSTRAINT fk_mf_purchase_customer_id FOREIGN KEY (customer_id) REFERENCES t_customer(id);
