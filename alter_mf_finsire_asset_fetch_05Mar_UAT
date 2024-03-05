@@ -1,0 +1,2 @@
+alter table t_mf_finsire_asset_fetch_data add column asset_fetch_id BIGINT ;
+ALTER TABLE t_mf_finsire_asset_fetch_data ADD FOREIGN KEY fk_t_mf_finsire_afd (asset_fetch_id) REFERENCES t_mf_finsire_asset_fetch(mf_finsire_asset_fetch_id);
