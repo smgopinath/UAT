@@ -1,0 +1,31 @@
+create table t_vas_credit_batch_status
+(
+batch_name varchar(100) COMMENT 'Scheduler Name',
+batch_type varchar(40) COMMENT 'Scheduler Type',
+batch_start_time datetime COMMENT 'Scheduler Start Time',
+batch_end_time datetime COMMENT 'Scheduler End Time',
+no_of_records_processed bigint COMMENT 'Number of Users to be run in scheduler',
+no_of_records_success bigint COMMENT 'Number of credit score scores Sucessfully fetched from Equifax /Finarkin',
+no_of_records_failed bigint COMMENT 'Number of credit score scores not Sucessfully fetched from Equifax /Finarkin',
+batch_status varchar(20) COMMENT 'Batch Status',
+active	bit(1) COMMENT 'Audit Columns used for traceability',
+created_on	datetime(6) COMMENT 'Audit Columns used for traceability',
+created_by	varchar(50) COMMENT 'Audit Columns used for traceability',
+modified_on	datetime(6) COMMENT 'Audit Columns used for traceability',
+modified_by	varchar(50) COMMENT 'Audit Columns used for traceability'
+);
+
+create table t_vas_credit_error_details
+(
+batch_error_detail_id bigint auto_increment primary key COMMENT 'Primary Key Auto Increment',
+exception_message varchar(500) COMMENT 'Error Message',
+tracking_id	bigint COMMENT 'Foreign Key From t_Customer	Customer Id',
+pancard	varchar(20) COMMENT 'pancard',
+mobile	varchar(10) COMMENT 'Mobile Number',
+name	varchar(100) COMMENT 'User Name',
+active	bit(1) COMMENT 'Audit Columns used for traceability', 
+created_on	datetime COMMENT 'Audit Columns used for traceability',
+created_by	varchar(50) COMMENT 'Audit Columns used for traceability',
+modified_on	datetime COMMENT 'Audit Columns used for traceability',
+modified_by	varchar(50) COMMENT 'Audit Columns used for traceability'
+);
