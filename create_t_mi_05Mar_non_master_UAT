@@ -1,0 +1,276 @@
+--
+-- Table structure for table `t_mi_address_details`
+--
+
+DROP TABLE IF EXISTS t_mi_address_details;
+CREATE TABLE t_mi_address_details (
+  address_details_id bigint NOT NULL AUTO_INCREMENT,
+  customer_id bigint NOT NULL,
+  vehicle_number varchar(20) NOT NULL,
+  address_type varchar(10) NOT NULL,
+  address_line varchar(250) DEFAULT NULL,
+  pincode varchar(6) DEFAULT NULL,
+  city varchar(100) DEFAULT NULL,
+  district varchar(40) DEFAULT NULL,
+  state varchar(40) DEFAULT NULL,
+  country varchar(40) DEFAULT NULL,
+  created_by varchar(100) DEFAULT NULL,
+  created_date datetime(6) DEFAULT NULL,
+  modified_by varchar(100) DEFAULT NULL,
+  modified_date datetime(6) DEFAULT NULL,
+  `active` bit(1) DEFAULT b'1',
+  PRIMARY KEY (address_details_id)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Table structure for table `t_mi_api_status`
+--
+
+DROP TABLE IF EXISTS t_mi_api_status;
+CREATE TABLE t_mi_api_status (
+  mi_api_status_id bigint NOT NULL AUTO_INCREMENT,
+  customer_id bigint DEFAULT NULL,
+  api_name varchar(150) DEFAULT NULL,
+  `status` varchar(20) DEFAULT NULL,
+  request mediumtext,
+  response mediumtext,
+  api_start_time datetime(6) DEFAULT NULL,
+  api_end_time datetime(6) DEFAULT NULL,
+  created_by varchar(100) DEFAULT NULL,
+  created_date datetime(6) DEFAULT NULL,
+  modified_by varchar(100) DEFAULT NULL,
+  modified_date datetime(6) DEFAULT NULL,
+  `active` bit(1) DEFAULT NULL,
+  PRIMARY KEY (mi_api_status_id),
+  KEY fk_motor_custid_idx (customer_id),
+  CONSTRAINT fk_motor_custid FOREIGN KEY (customer_id) REFERENCES t_customer (id)
+) ENGINE=InnoDB AUTO_INCREMENT=462 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='	';
+
+--
+-- Table structure for table `t_mi_challan_details`
+--
+
+DROP TABLE IF EXISTS t_mi_challan_details;
+CREATE TABLE t_mi_challan_details (
+  challan_details_id bigint NOT NULL AUTO_INCREMENT,
+  customer_id bigint DEFAULT NULL,
+  vehicle_number varchar(20) NOT NULL,
+  partner_id varchar(40) DEFAULT NULL,
+  patron_id varchar(40) DEFAULT NULL,
+  `number` int DEFAULT NULL,
+  challan_number varchar(40) DEFAULT NULL,
+  offense_details varchar(500) DEFAULT NULL,
+  challan_place varchar(60) DEFAULT NULL,
+  challan_date date DEFAULT NULL,
+  state varchar(40) DEFAULT NULL,
+  rto varchar(40) DEFAULT NULL,
+  accused_name varchar(120) DEFAULT NULL,
+  amount double NOT NULL,
+  challan_status varchar(20) DEFAULT NULL,
+  court_challan varchar(40) DEFAULT NULL,
+  challan_source varchar(20) DEFAULT NULL,
+  created_by varchar(100) DEFAULT NULL,
+  created_date datetime(6) DEFAULT NULL,
+  modified_by varchar(100) DEFAULT NULL,
+  modified_date datetime(6) DEFAULT NULL,
+  `active` bit(1) DEFAULT b'1',
+  PRIMARY KEY (challan_details_id)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Table structure for table `t_mi_nominee_details`
+--
+
+DROP TABLE IF EXISTS t_mi_nominee_details;
+CREATE TABLE t_mi_nominee_details (
+  nominee_details_id int NOT NULL AUTO_INCREMENT,
+  vehicle_number varchar(20) NOT NULL,
+  customer_id bigint NOT NULL,
+  nominee_name varchar(50) DEFAULT NULL,
+  nominee_relationship varchar(40) DEFAULT NULL,
+  nominee_dateofbirth date DEFAULT NULL,
+  nominee_pannumber varchar(10) DEFAULT NULL,
+  nominee_percent_allocation int DEFAULT NULL,
+  created_by varchar(100) DEFAULT NULL,
+  created_date datetime(6) DEFAULT NULL,
+  modified_by varchar(100) DEFAULT NULL,
+  modified_date datetime(6) DEFAULT NULL,
+  `active` bit(1) DEFAULT b'1',
+  PRIMARY KEY (nominee_details_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Table structure for table `t_mi_owner_details`
+--
+
+DROP TABLE IF EXISTS t_mi_owner_details;
+CREATE TABLE t_mi_owner_details (
+  owner_details_id bigint NOT NULL AUTO_INCREMENT,
+  customer_id bigint NOT NULL,
+  vehicle_number varchar(20) DEFAULT NULL,
+  owner_type varchar(100) DEFAULT NULL,
+  owner_name varchar(120) DEFAULT NULL,
+  first_name varchar(40) DEFAULT NULL,
+  middle_name varchar(40) DEFAULT NULL,
+  last_name varchar(40) DEFAULT NULL,
+  date_of_birth date DEFAULT NULL,
+  gender varchar(1) DEFAULT NULL,
+  mobile_number varchar(15) DEFAULT NULL,
+  email_address varchar(100) DEFAULT NULL,
+  owner_father_name varchar(60) DEFAULT NULL,
+  owner_mother_name varchar(60) DEFAULT NULL,
+  owner_spouse_name varchar(60) DEFAULT NULL,
+  pan_number varchar(10) DEFAULT NULL,
+  aadhaar_number varchar(20) DEFAULT NULL,
+  driving_license_number varchar(30) DEFAULT NULL,
+  pan_status varchar(30) DEFAULT NULL,
+  pan_status_code varchar(30) DEFAULT NULL,
+  aadhaar_seeding_status varchar(30) DEFAULT NULL,
+  created_by varchar(100) DEFAULT NULL,
+  created_date datetime(6) DEFAULT NULL,
+  modified_by varchar(100) DEFAULT NULL,
+  modified_date datetime(6) DEFAULT NULL,
+  `active` bit(1) DEFAULT b'1',
+  PRIMARY KEY (owner_details_id)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Table structure for table `t_mi_policy_details`
+--
+
+DROP TABLE IF EXISTS t_mi_policy_details;
+CREATE TABLE t_mi_policy_details (
+  policy_details_id bigint NOT NULL AUTO_INCREMENT,
+  customer_id bigint NOT NULL,
+  vehicle_number varchar(20) NOT NULL,
+  policy_number varchar(60) DEFAULT NULL,
+  insurance_code varchar(30) DEFAULT NULL,
+  insurance_company_name varchar(50) DEFAULT NULL,
+  policy_type varchar(20) DEFAULT NULL,
+  policy_premium double DEFAULT NULL,
+  policy_suminsured double DEFAULT NULL,
+  policy_claimed bit(1) DEFAULT b'0',
+  policy_ncb_value int DEFAULT NULL,
+  policy_ncb_percentage double DEFAULT NULL,
+  policy_start_date datetime(6) DEFAULT NULL,
+  policy_expiry_date datetime(6) DEFAULT NULL,
+  is_expired bit(1) DEFAULT b'0',
+  policy_term int DEFAULT NULL,
+  zd_cover bit(1) DEFAULT b'0',
+  pa_cover bit(1) DEFAULT b'0',
+  is_new_policy bit(1) DEFAULT b'0',
+  created_by varchar(100) DEFAULT NULL,
+  created_date datetime(6) DEFAULT NULL,
+  modified_by varchar(100) DEFAULT NULL,
+  modified_date datetime(6) DEFAULT NULL,
+  `active` bit(1) DEFAULT b'1',
+  PRIMARY KEY (policy_details_id)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `t_mi_previous_policy_details`
+--
+
+DROP TABLE IF EXISTS t_mi_previous_policy_details;
+CREATE TABLE t_mi_previous_policy_details (
+  previous_policy_details_id bigint NOT NULL AUTO_INCREMENT,
+  vehicle_number varchar(20) NOT NULL,
+  policy_number varchar(60) DEFAULT NULL,
+  insurance_code varchar(30) DEFAULT NULL,
+  insurance_company_name varchar(50) DEFAULT NULL,
+  policy_type varchar(20) DEFAULT NULL,
+  policy_premium double DEFAULT NULL,
+  policy_suminsured double DEFAULT NULL,
+  policy_claimed bit(1) DEFAULT b'0',
+  policy_ncb_value int DEFAULT NULL,
+  policy_ncb_percentage double DEFAULT NULL,
+  policy_start_date datetime(6) DEFAULT NULL,
+  policy_expiry_date datetime(6) DEFAULT NULL,
+  is_expired bit(1) DEFAULT b'0',
+  policy_term int DEFAULT NULL,
+  zd_cover bit(1) DEFAULT b'0',
+  pa_cover bit(1) DEFAULT b'0',
+  is_new_policy bit(1) DEFAULT b'0',
+  created_by varchar(100) DEFAULT NULL,
+  created_date datetime(6) DEFAULT NULL,
+  modified_by varchar(100) DEFAULT NULL,
+  modified_date datetime(6) DEFAULT NULL,
+  `active` bit(1) DEFAULT b'1',
+  customer_id bigint NOT NULL,
+  PRIMARY KEY (previous_policy_details_id)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Table structure for table `t_mi_quote_details`
+--
+
+DROP TABLE IF EXISTS t_mi_quote_details;
+CREATE TABLE t_mi_quote_details (
+  quote_id bigint NOT NULL AUTO_INCREMENT,
+  customer_id bigint NOT NULL,
+  vehicle_number varchar(20) NOT NULL,
+  insurer_id int NOT NULL,
+  addon_insurer_id bigint DEFAULT NULL,
+  plan_id varchar(60) DEFAULT NULL,
+  cover_id varchar(60) DEFAULT NULL,
+  idv_amount double DEFAULT NULL,
+  net_premium double DEFAULT NULL,
+  gross_premium double DEFAULT NULL,
+  gst double DEFAULT NULL,
+  ncb_discount double DEFAULT NULL,
+  other_discount double DEFAULT NULL,
+  discount_amount double DEFAULT NULL,
+  idv_type varchar(20) NOT NULL,
+  created_by varchar(100) DEFAULT NULL,
+  created_date datetime(6) DEFAULT NULL,
+  modified_by varchar(100) DEFAULT NULL,
+  modified_date datetime(6) DEFAULT NULL,
+  `active` bit(1) DEFAULT b'1',
+  PRIMARY KEY (quote_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Table structure for table `t_mi_vehicle_details`
+--
+
+DROP TABLE IF EXISTS t_mi_vehicle_details;
+CREATE TABLE t_mi_vehicle_details (
+  vehicle_details_id bigint NOT NULL AUTO_INCREMENT,
+  customer_id bigint NOT NULL,
+  vehicle_number varchar(20) NOT NULL,
+  partner_id varchar(40) DEFAULT NULL,
+  patron_id varchar(40) DEFAULT NULL,
+  vehicle_category varchar(20) DEFAULT NULL,
+  chassis_no varchar(50) DEFAULT NULL,
+  engine_no varchar(30) DEFAULT NULL,
+  brand_name varchar(150) DEFAULT NULL,
+  vehicle_variant varchar(100) DEFAULT NULL,
+  vehicle_model varchar(100) DEFAULT NULL,
+  vehicle_colour varchar(100) DEFAULT NULL,
+  fuel_type varchar(20) DEFAULT NULL,
+  norms_type varchar(150) DEFAULT NULL,
+  body_type varchar(150) DEFAULT NULL,
+  cubic_capacity varchar(10) DEFAULT NULL,
+  number_of_seats tinyint DEFAULT NULL,
+  manufactured_on varchar(10) DEFAULT NULL,
+  registrated_on date DEFAULT NULL,
+  registration_expired_on date DEFAULT NULL,
+  registration_authority varchar(150) DEFAULT NULL,
+  wheelbase varchar(6) DEFAULT NULL,
+  is_vehicle_commercial bit(1) DEFAULT b'0',
+  is_vehicle_new bit(1) DEFAULT b'0',
+  noc_details varchar(40) DEFAULT NULL,
+  rto_code varchar(6) DEFAULT NULL,
+  vehicle_class varchar(100) DEFAULT NULL,
+  pucc_number varchar(40) DEFAULT NULL,
+  pucc_valid_upto varchar(40) DEFAULT NULL,
+  created_by varchar(100) DEFAULT NULL,
+  created_date datetime(6) DEFAULT NULL,
+  modified_by varchar(100) DEFAULT NULL,
+  modified_date datetime(6) DEFAULT NULL,
+  `active` bit(1) DEFAULT b'1',
+  PRIMARY KEY (vehicle_details_id)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Dump completed
