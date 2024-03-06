@@ -1,0 +1,12 @@
+create table t_app_permissions
+(
+app_permissions_id bigint primary key auto_increment comment 'Primary key',
+customer_id bigint comment 'Foreign key from t_customer',
+mdn varchar(20) comment 'mobile no of the customer',
+location varchar(1) comment 'location',
+camera varchar(1) comment 'camera',
+sms varchar(1) comment 'sms',
+contact varchar(1) comment 'contact',
+auth_method varchar(10) comment 'possible values BioM, MPIN',
+CONSTRAINT fk_cust_id_app_perm FOREIGN KEY (customer_id) REFERENCES t_customer (id)
+);
