@@ -1,1 +1,4 @@
 alter table t_pinmgt add (mpin2 varchar(255),mpin3 varchar(255));
+
+alter table t_pinmgt rename column mpin2 to  mpin_2;
+alter table t_pinmgt rename column mpin3 to  mpin_3;
