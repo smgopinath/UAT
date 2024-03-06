@@ -1,0 +1,1 @@
+update t_product_plan_master set plan_name = "Activ Assure Diamond + Super Top Up Plan B" where plan_id = 7;
