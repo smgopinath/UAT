@@ -1,0 +1,3 @@
+alter table t_customer_login_details add column sessionid varchar(1500);
+alter table t_customer_login_details add column jwttoken varchar(1500);
+alter table t_customer_login_details add column fcmtoken varchar(1500);
