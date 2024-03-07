@@ -1,0 +1,142 @@
+alter table t_li_verification
+add (
+insur_nameofbusiness	varchar(45) comment 'Name of the business', 
+insur_natureofbusiness	varchar(45) comment 'Nature of business', 
+insur_typeoforganisation	varchar(45) comment 'Type of organisation',
+insur_nameoforganisation	varchar(45) comment 'Name of the organisation',
+insur_designation	varchar(45) comment 'Designation',
+insur_nsdl	varchar(1) comment 'nsdl',
+insur_parents_annualincome	double comment 'parent annual income',
+insur_parents_exist_cover	double comment 'parent exist cover',
+insur_spouse_annualincome	double comment 'spouse annual income',
+insur_pannumber	varchar(15) comment 'pan no',
+insur_aadhaarnumber	varchar(14) comment 'aadhar no'
+);
+
+alter table t_li_basic_nomininee
+add
+(
+insur_nationality varchar(45) comment 'Nationality',
+insur_marital_status varchar(45) comment 'Martial status',
+insur_father_spousename varchar(45) comment 'Father/Spouse name',
+insur_mothers_name varchar(45) comment 'Mother name',
+insur_maidenname varchar(45) comment 'Maiden name',
+insur_birthplace varchar(45) comment 'Birth place'
+);
+
+create table t_li_insur_minor_hlth_details
+(
+li_health_details_id bigint auto_increment primary key comment 'Primary key auto increment', 
+lob_id bigint comment 'Line of Business ID',
+application_number varchar(45) comment 'Application no',
+insur_height_ft int comment 'height in feet',
+insur_height_cms int comment 'height in cms',
+insur_weight int comment 'weight',
+insur_birth_weight int comment 'birth weight',
+insur_weight_change bit(1) comment 'weight'
+insur_weight_amount int comment 'weight amount',
+insur_weight_reason varchar(255) comment 'weight reason',
+insur_sibilings bit(1) comment 'siblings',
+insur_sisters_cnt int comment 'sisters',
+insur_brothers_cnt int comment 'brothers',
+insur_all_child bit(1) comment 'all child',
+insur_child_details varchar(255) comment 'child details',
+addl_health_none bit(1) comment 'addl health',
+addl_type varchar(45) comment 'addl type',
+add2Type varchar(45) comment 'add2 type',
+add3Type varchar(45) comment 'add3 type',
+add4Type varchar(45) comment 'add4 type',
+diag_details1 varchar(255) comment 'diag details',
+diag_details2 varchar(255) comment 'diag details',
+diag_details3 varchar(255) comment 'diag details',
+diag_details4 varchar(255) comment 'diag details',
+dr_details1 varchar(45) comment 'doctor details',
+dr_details2 varchar(45) comment 'doctor details', 
+dr_details3 varchar(45) comment 'doctor details', 
+dr_details4 varchar(45) comment 'doctor details', 
+diag_date1 date comment 'diagnosis date', 
+diag_date2 date comment 'diagnosis date',
+diag_date3 date comment 'diagnosis date',
+diag_date4 date comment 'diagnosis date',
+last_consulting_date1 date comment 'last consulting date',
+last_consulting_date2 date comment 'last consulting date',
+last_consulting_date3 date comment 'last consulting date',
+last_consulting_date4 date comment 'last consulting date',
+hospitalization_details1 varchar(255) comment 'hosiptablization',
+hospitalization_details2 varchar(255) comment 'hosiptablization',
+hospitalization_details3 varchar(255) comment 'hosiptablization',
+hospitalization_details4 varchar(255) comment 'hosiptablization',
+customer_id bigint comment 'customer id',
+active bit(1) comment 'Audit Columns used for traceability',
+modified_date datetime(6) comment 'Audit Columns used for traceability',
+created_date datetime(6) comment 'Audit Columns used for traceability',
+created_by varchar(45) comment 'Audit Columns used for traceability',
+modified_by varchar(45) comment 'Audit Columns used for traceability',
+);
+
+alter table t_li_eai_details add 
+(
+insur_is_politically_exposed varchar(1) comment 'Political exposure',
+insur_any_othercitizenship varchar(1) comment 'Other citizenship',
+insur_tax_resident_othercountry varchar(1) comment 'tax resident',
+insur_gstlaw varchar(1) comment 'GST law',
+insur_eia_accountdetails bigint comment 'EIA account details',
+insur_political_exposuredetails varchar(45) comment 'Political exposure',
+insur_citizenship_details varchar(45) comment 'Citizenship details',
+insur_other_residencydetails varchar(45) comment 'Residency details',
+insur_gst_registration varchar(45) comment 'GST registration',
+insur_eia_account varchar(1) comment 'EIA account',
+insur_eia_preferred_repo varchar(50) comment 'EIA REPO preference'
+);
+
+create table t_li_insur_parents_policy_dtls
+(
+policy_details_id bigint auto_increment primary key comment 'Primary key auto increment',
+customer_id bigint comment 'Customer ID',
+lob_id bigint comment 'Line of Business ID',
+application_number varchar(45) comment 'application no',
+fat_insur_name varchar(150) comment 'insur name',
+fat_insur_issue_year double comment 'insurance issue year',
+fat_insur_sum_assured double comment 'insurance sum assured',
+fat_insur_name1 varchar(150) comment 'insurance name',
+fat_insur_issue_year1 double comment 'insurance issue year',
+fat_insur_sum_assured1 double comment 'insurance sum assured',
+fat_insur_name2 varchar(150) comment 'insurance name',
+fat_insur_issue_year2 double comment 'insurance issue year',
+fat_insur_sum_assured2 double comment 'insurance sum assured',
+mot_insur_name varchar(150) comment 'insur name',
+mot_insur_issue_year double comment 'insurance issue year',
+mot_insur_sum_assured double comment 'insurance sum assured',
+mot_insur_name1 varchar(150) comment 'insurance name',
+mot_insur_issue_year1 double comment 'insurance issue year',
+mot_insur_sum_assured1 double comment 'insurance sum assured',
+mot_insur_name2 varchar(150) comment 'insur name',
+mot_insur_issue_year2 double comment 'insurance issue year',
+mot_insur_sum_assured2 double comment 'insurance sum assured',
+active bit(1) comment 'Audit Columns used for traceability',
+modified_date datetime(6) comment 'Audit Columns used for traceability',
+created_date datetime(6) comment 'Audit Columns used for traceability',
+created_by varchar(45) comment 'Audit Columns used for traceability',
+modified_by varchar(45) comment 'Audit Columns used for traceability'
+);
+
+alter table t_li_covid_details add
+(
+insur_cvd_positive varchar(1) comment 'Covid positive details',
+insur_coviddate date comment 'Covid date',
+insur_covid_treatment varchar(1) comment 'covid treatment',
+insur_home_qrntine varchar(1) comment 'home quartine',
+insur_cvd_hospitalised varchar(45) comment 'covid hospitalized',
+insur_cvd_ongoing_complications varchar(1) comment 'covid complications',
+insur_covid_recdate date comment 'covid recovered'
+);
+
+alter table t_li_term_main add
+(
+invest_amount bigint comment 'Investment amount',
+invest_freq varchar(20) comment 'investment frequency',
+cover_multiplier int comment 'Cover multiplier',
+deferment_period int comment 'deferment period'
+);
+
+Nischit_Aayush_Assured_Savings_Plan_Table
