@@ -1,0 +1,8 @@
+alter table t_vas_credit_batch_status add
+(
+batch_status_id bigint NOT NULL PRIMARY KEY AUTO_INCREMENT,
+modified_date datetime(6) DEFAULT NULL COMMENT 'Audit Columns used for traceability'
+);
+
+alter table t_vas_credit_batch_status modify batch_start_time datetime(6) DEFAULT NULL COMMENT 'Scheduler Start Time';
+alter table t_vas_credit_batch_status modify batch_end_time datetime(6) DEFAULT NULL COMMENT 'Scheduler End Time';
