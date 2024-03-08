@@ -1,0 +1,3 @@
+alter table t_app_permissions rename column created_date to permission_granted_date;
+alter table t_app_permissions add column device_os varchar(45) comment 'Device OS';
+alter table t_app_permissions drop column active;
