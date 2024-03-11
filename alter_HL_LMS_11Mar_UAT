@@ -1,0 +1,5 @@
+ALTER TABLE t_homeloan_loanoffer 
+ADD COLUMN lms_lead_id VARCHAR(45)  DEFAULT NULL COMMENT 'Lead id created by LMS api' AFTER final_loan_amount,
+ADD COLUMN application_no VARCHAR(45)  DEFAULT NULL COMMENT 'Unique Application no' AFTER lms_lead_id; 
+
+ALTER TABLE t_homeloan_customer ADD COLUMN name VARCHAR(45) NULL DEFAULT NULL COMMENT 'User full name' AFTER lobid;
