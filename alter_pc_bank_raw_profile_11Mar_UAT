@@ -1,0 +1,1 @@
+alter table t_pc_bank_raw_profile add column is_data_fetched bit(1) COMMENT 'Flag for data fetch status from Pirimid';
