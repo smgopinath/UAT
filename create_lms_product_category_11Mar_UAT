@@ -1,0 +1,8 @@
+create table t_lms_product_category 
+(
+lms_product_category_id bigint primary key auto_increment not null comment 'Primary key auto increment',
+lob varchar(20) comment 'Line of business',
+product_category varchar(45) comment 'lms product category',
+product_name varchar(100) comment 'lms product name',
+KEY ix_prd_catgry_name (product_category,product_name)
+);
