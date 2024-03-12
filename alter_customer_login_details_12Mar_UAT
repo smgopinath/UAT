@@ -1,0 +1,1 @@
+ALTER TABLE t_customer_login_details ALTER channel SET DEFAULT 'mobile';
