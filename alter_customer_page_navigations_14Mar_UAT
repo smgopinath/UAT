@@ -1,0 +1,1 @@
+ALTER TABLE t_customer_page_navigations MODIFY COLUMN mdn varchar(15);
