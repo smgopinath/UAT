@@ -1,0 +1,1 @@
+alter table t_app_permissions rename column call to call_permission, rename column storage to storage_permission ;
